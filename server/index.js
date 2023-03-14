@@ -2,12 +2,14 @@
 
 // Basic express setup:
 
-const PORT          = 8080;
-const express       = require("express");
-const bodyParser    = require("body-parser");
-const app           = express();
+const PORT = 8080;
+const express = require("express");
+const bodyParser = require("body-parser");
+const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// This line of middleware is how images, html, css and other javascript files are handled in express. It will give us access to everything in the public folder.
 app.use(express.static("public"));
 
 // The in-memory database of tweets. It's a basic object with an array in it.
