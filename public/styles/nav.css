@@ -20,13 +20,16 @@ span {
   align-items: center;
 }
 
-
+.doubleArrow {
+  color:#917017;
+}
 nav {
-  height: 120px;
+  height: 80px;
   width:100%;
   background-color: #4056A1;
   display:flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between; 
+  position: fixed;
 }
