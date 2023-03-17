@@ -8,24 +8,16 @@ form {
   margin-right: 0;
   background-color: #3DFFEE;
   outline: none;
-  border:hidden;
   height: 50px;
   font-family: 'Source Sans Pro';
   font-weight: 900;
-  color:#917017
-}
-
-.textbox {
-  width:100%;
-  margin-left: 0;
-  margin-right: 0;
+  color:#917017;
   border-bottom: 5px;
   border-top: 0;
   border-left: 0;
   border-right: 0;
   border-style: solid;
   border-color: #917017;
- 
 }
 
 .underTextBox {
@@ -48,3 +40,4 @@ button {
   font-family:'Bungee';
   color: #917017;
 }
+
