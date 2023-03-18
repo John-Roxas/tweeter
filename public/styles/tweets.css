@@ -69,8 +69,18 @@
 .tweets-article-footerleft-timesince{
   font-family: 'Source Sans Pro';
   font-size: 16px;
+  font-weight: 800;
 }
 
-.tweets-font-color{
+.tweets-icon-color{
   color:#4056A1;
+}
+
+.tweets-icon-color:hover{
+  color:#a4b0d7;
+  cursor:pointer;
+}
+
+article.tweets:hover{
+  box-shadow: 8px 8px 2px 1px #41330a6f;
 }
