@@ -4,6 +4,7 @@ $(document).ready(function () {
   $("#tweet-text").on("input", function () {
     // Declaring a variable that will represent the length of the string typed into textbox #tweet-text
     let newValue = $(this).val().length;
+
     // This variable will be needed for the colour change conditional for the counter!
     const counter = $(this).parent().find(".counter");
 
