@@ -30,5 +30,17 @@
 }
 
 .tweets-body{
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-bottom:10px;
   
+  font-family: 'Source Sans Pro';
+  font-weight: 900;
+  min-height: 5em;
+  border-top:0;
+  border-left:0;
+  border-right: 0;
+  border-bottom: 5px;
+  border-color: #917017;
+  border-style: solid; 
 }
