@@ -1,0 +1,30 @@
+.tweets {
+  margin-top:1.5em;
+  border: 5px;
+  border-color: #917017;
+  border-style: solid; 
+}
+
+.tweets-article-headerleft-img{
+  width: 75px;
+  height: 75px;
+}
+
+.tweets-article-header{
+  display:flex;
+  justify-content: space-between;
+
+}
+
+.tweets-article-headerleft{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  padding-top:5px;
+  padding-left: 5px;
+}
+
+.tweets-article-headerright-handle{
+  opacity: 15%;
+  padding-right:5px;
+}
