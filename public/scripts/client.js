@@ -34,6 +34,10 @@ const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
+  tweets.forEach((element) => {
+    let newTweet = createTweetElement(element);
+    $("#tweets-container").append(newTweet);
+  });
 };
 
 const createTweetElement = function (tweet) {
