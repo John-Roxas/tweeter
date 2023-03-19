@@ -5,6 +5,11 @@
   border-style: solid; 
 }
 
+.tweets-container{
+  display:flex;
+  flex-direction: column;
+}
+
 .tweets-article-headerleft-img{
   width: 75px;
   height: 75px;

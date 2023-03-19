@@ -35,38 +35,42 @@ const renderTweets = function (tweets) {
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
   tweets.forEach((element) => {
-    let newTweet = createTweetElement(element);
-    $("#tweets-container").append(newTweet);
+    console.log("incoming new tweet");
+    let $newTweet = createTweetElement(element);
+    console.log($newTweet);
+    $(".tweets-container").append($newTweet);
   });
 };
 
 const createTweetElement = function (tweet) {
   let $tweet = $(`
-  <article class="tweet">
-    <header class="tweets-article-header">
-          <div class="tweets-article-headerleft">
-            <img class ="tweets-article-headerleft-img"src="${tweet.user.avatars}">
-            <h3 class="tweets-article-headerleft-name">${tweet.user.name}</h3>
-          </div>
-          <div class="tweets-article-headerright">
-            <h3 class="tweets-article-headerright-handle">${tweet.user.handle}</h3>
-          </div>
-        </header>
-        <div class="tweets-body">
-          <p class="tweet-p">${tweet.content.text}</p>
-        </div>
-        <footer class="tweets-article-footer">
-          <div class="tweets-article-footerleft">
-            <p class="tweets-article-footerleft-timesince">${tweet.created_at}</h5>
-          </div>
-          <div class="tweets-article-footerright">
-            <i class="fa-solid fa-flag tweets-icon-color"></i>
-            <i class="fa-solid fa-retweet tweets-icon-color"></i>
-            <i class="fa-solid fa-heart tweets-icon-color"></i>
-          </div>
-        </footer>
-  </article>`);
+      <article class="tweets">
+        <header class="tweets-article-header">
+              <div class="tweets-article-headerleft">
+                <img class ="tweets-article-headerleft-img"src="${tweet.user.avatars}">
+                <h3 class="tweets-article-headerleft-name">${tweet.user.name}</h3>
+              </div>
+              <div class="tweets-article-headerright">
+                <h3 class="tweets-article-headerright-handle">${tweet.user.handle}</h3>
+              </div>
+            </header>
+            <div class="tweets-body">
+              <p class="tweet-p">${tweet.content.text}</p>
+            </div>
+            <footer class="tweets-article-footer">
+              <div class="tweets-article-footerleft">
+                <p class="tweets-article-footerleft-timesince">${tweet.created_at}</h5>
+              </div>
+              <div class="tweets-article-footerright">
+                <i class="fa-solid fa-flag tweets-icon-color"></i>
+                <i class="fa-solid fa-retweet tweets-icon-color"></i>
+                <i class="fa-solid fa-heart tweets-icon-color"></i>
+              </div>
+            </footer>
+      </article>`);
   return $tweet;
 };
 
-renderTweets(data);
+$(document).ready(function () {
+  renderTweets(data);
+});
