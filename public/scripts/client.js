@@ -43,6 +43,11 @@ const renderTweets = function (tweets) {
 };
 
 const createTweetElement = function (tweet) {
+  let currentTime = Date.now();
+  let timeBetween = Math.floor(
+    (currentTime - tweet.created_at) / 1000 / 60 / 60 / 24
+  );
+
   let $tweet = $(`
       <article class="tweets">
         <header class="tweets-article-header">
@@ -59,7 +64,7 @@ const createTweetElement = function (tweet) {
             </div>
             <footer class="tweets-article-footer">
               <div class="tweets-article-footerleft">
-                <p class="tweets-article-footerleft-timesince">${tweet.created_at}</h5>
+                <p class="tweets-article-footerleft-timesince">${timeBetween} Days Ago</h5>
               </div>
               <div class="tweets-article-footerright">
                 <i class="fa-solid fa-flag tweets-icon-color"></i>
