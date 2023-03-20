@@ -30,6 +30,10 @@ const data = [
   },
 ];
 
+/* 
+The render tweets function will take our array of tweets stored in the data array above and appends them to the 
+.tweets.container div in our html.
+*/
 const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
@@ -37,11 +41,13 @@ const renderTweets = function (tweets) {
   tweets.forEach((element) => {
     console.log("incoming new tweet");
     let $newTweet = createTweetElement(element);
-    console.log($newTweet);
     $(".tweets-container").append($newTweet);
   });
 };
 
+/*This function takes a tweet object in a form that matches above as an input and returns a tweet jQuery object
+that matches our original html structure for a tweet
+*/
 const createTweetElement = function (tweet) {
   let currentTime = Date.now();
   let timeBetween = Math.floor(
