@@ -8,6 +8,7 @@ $(document).ready(function () {
       alert("Write something in the textbox! Cannot tweet an empty message!");
     } else {
       jQuery.post("/tweets", $(this).serialize());
+      $("#tweet-text").val("");
     }
 
     event.preventDefault();
