@@ -72,7 +72,7 @@ that matches our original html structure for a tweet
       });
     } else {
       $.get("/tweets", function (data) {
-        renderTweets(newTweetData);
+        renderTweets(data);
       });
     }
   };
@@ -97,5 +97,6 @@ that matches our original html structure for a tweet
 
     event.preventDefault();
   });
+  loadTweets();
   // renderTweets(data);
 });
