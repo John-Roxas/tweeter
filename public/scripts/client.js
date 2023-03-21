@@ -15,7 +15,6 @@ The render tweets function will take our array of tweets stored in the data arra
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     tweets.forEach((element) => {
-      console.log("incoming new tweet");
       let $newTweet = createTweetElement(element);
       $(".tweets-container").append($newTweet);
     });
