@@ -80,14 +80,10 @@ that matches our original html structure for a tweet
     } else if (input.length > 140) {
       alert("Tweet is too long! Consider cutting down!");
     } else {
-      jQuery
-        .post("/tweets", $(this).serialize(), () => {
-          console.log("successful message sent to server");
-        })
-        .done(() => {
-          console.log("loading tweets...");
-          loadTweets();
-        });
+      jQuery.post("/tweets", $(this).serialize()).done(() => {
+        loadTweets();
+        $("#tweet-text").val("");
+      });
     }
 
     event.preventDefault();
