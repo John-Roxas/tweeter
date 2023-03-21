@@ -5,60 +5,36 @@
  */
 
 // Data taken from compass page M4W9: Dynamic Tweets
-const data = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
-/* 
+$(document).ready(function () {
+ 
 The render tweets function will take our array of tweets stored in the data array above and appends them to the 
 .tweets.container div in our html.
 */
-const renderTweets = function (tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
-  tweets.forEach((element) => {
-    console.log("incoming new tweet");
-    let $newTweet = createTweetElement(element);
-    $(".tweets-container").append($newTweet);
-  });
-};
+  const renderTweets = function (tweets) {
+    // loops through tweets
+    // calls createTweetElement for each tweet
+    // takes return value and appends it to the tweets container
+    tweets.forEach((element) => {
+      console.log("incoming new tweet");
+      let $newTweet = createTweetElement(element);
+      $(".tweets-container").append($newTweet);
+    });
+  };
 
-/*This function takes a tweet object in a form that matches above as an input and returns a tweet jQuery object
+  /*This function takes a tweet object in a form that matches above as an input and returns a tweet jQuery object
 that matches our original html structure for a tweet
 */
-const createTweetElement = function (tweet) {
-  let currentTime = Date.now();
+  const createTweetElement = function (tweet) {
+    let currentTime = Date.now();
 
-  /* timeBetween is calculated by determining the difference between the current time and the time stored in 
+    /* timeBetween is calculated by determining the difference between the current time and the time stored in 
   tweet.created_at. It then calculates this difference from unix time to days.
   */
-  let timeBetween = Math.floor(
-    (currentTime - tweet.created_at) / 1000 / 60 / 60 / 24
-  );
+    let timeBetween = Math.floor(
+      (currentTime - tweet.created_at) / 1000 / 60 / 60 / 24
+    );
 
-  let $tweet = $(`
+    let $tweet = $(`
       <article class="tweets">
         <header class="tweets-article-header">
               <div class="tweets-article-headerleft">
@@ -83,9 +59,15 @@ const createTweetElement = function (tweet) {
               </div>
             </footer>
       </article>`);
-  return $tweet;
-};
+    return $tweet;
+  };
 
-$(document).ready(function () {
-  renderTweets(data);
+  // jQuery function to make a request to /tweets and receive the arry of tweets as JSON.
+  const loadTweets = function () {
+    $.get("/tweets", function (input) {
+      renderTweets(input);
+    });
+  };
+  loadTweets();
+  // renderTweets(data);
 });
