@@ -14,7 +14,9 @@ The render tweets function will take our array of tweets stored in the data arra
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-    tweets.forEach((element) => {
+    let tweetsReversed = tweets.reverse();
+
+    tweetsReversed.forEach((element) => {
       let $newTweet = createTweetElement(element);
       $(".tweets-container").append($newTweet);
     });
@@ -62,10 +64,17 @@ that matches our original html structure for a tweet
   };
 
   // jQuery function to make a request to /tweets and receive the arry of tweets as JSON.
-  const loadTweets = function () {
-    $.get("/tweets", function (input) {
-      renderTweets(input);
-    });
+  const loadTweets = function (newTweet) {
+    if (newTweet === true) {
+      $.get("/tweets", function (data) {
+        $(".tweets-container").empty();
+        renderTweets(data);
+      });
+    } else {
+      $.get("/tweets", function (data) {
+        renderTweets(newTweetData);
+      });
+    }
   };
 
   // Form submission functionality.
@@ -81,7 +90,7 @@ that matches our original html structure for a tweet
       alert("Tweet is too long! Consider cutting down!");
     } else {
       jQuery.post("/tweets", $(this).serialize()).done(() => {
-        loadTweets();
+        loadTweets(true);
         $("#tweet-text").val("");
       });
     }
