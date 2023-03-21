@@ -6,7 +6,7 @@
 
 // Data taken from compass page M4W9: Dynamic Tweets
 $(document).ready(function () {
- 
+  /*
 The render tweets function will take our array of tweets stored in the data array above and appends them to the 
 .tweets.container div in our html.
 */
