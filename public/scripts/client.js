@@ -7,6 +7,7 @@
 // Data taken from compass page M4W9: Dynamic Tweets
 $(document).ready(function () {
   /*
+  
 The render tweets function will take our array of tweets stored in the data array above and appends them to the 
 .tweets.container div in our html.
 */
@@ -19,6 +20,13 @@ The render tweets function will take our array of tweets stored in the data arra
       let $newTweet = createTweetElement(element);
       $(".tweets-container").prepend($newTweet);
     });
+  };
+
+  // Escape function to prevent malicious text inputs as tweets!
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
   /*This function takes a tweet object in a form that matches above as an input and returns a tweet jQuery object
@@ -38,15 +46,21 @@ that matches our original html structure for a tweet
       <article class="tweets">
         <header class="tweets-article-header">
               <div class="tweets-article-headerleft">
-                <img class ="tweets-article-headerleft-img"src="${tweet.user.avatars}">
-                <h3 class="tweets-article-headerleft-name">${tweet.user.name}</h3>
+                <img class ="tweets-article-headerleft-img"src="${
+                  tweet.user.avatars
+                }">
+                <h3 class="tweets-article-headerleft-name">${
+                  tweet.user.name
+                }</h3>
               </div>
               <div class="tweets-article-headerright">
-                <h3 class="tweets-article-headerright-handle">${tweet.user.handle}</h3>
+                <h3 class="tweets-article-headerright-handle">${
+                  tweet.user.handle
+                }</h3>
               </div>
             </header>
             <div class="tweets-body">
-              <p class="tweet-p">${tweet.content.text}</p>
+              <p class="tweet-p">${escape(tweet.content.text)}</p>
             </div>
             <footer class="tweets-article-footer">
               <div class="tweets-article-footerleft">
