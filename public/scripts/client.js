@@ -129,6 +129,8 @@ that matches our original html structure for a tweet
       jQuery.post("/tweets", $(this).serialize(), () => {
         loadTweets(true);
         $("#tweet-text").val("");
+        // By default, the POST function should delete the error message. Turns out nothing gets deleted if it aleady doe snot exist.
+        $(".errorMsg").remove();
       });
     }
 
