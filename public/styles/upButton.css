@@ -1,0 +1,16 @@
+#upButton {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #917017;
+  height: 3.5rem;
+  width: 3.5rem;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  border-radius: 50%;
+  border: 10px solid #917017;
+  
+}
