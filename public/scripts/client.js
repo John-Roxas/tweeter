@@ -124,8 +124,8 @@ that matches our original html structure for a tweet
 
     // $("#toggleAnim").toggleClass(["expand", "expandOff"]);
   });
-  // Form submission functionality.
 
+  // Form submission functionality.
   $("#target").submit(function (event) {
     // Writing a shortcut to the input form so we don't have a lot of unnecessary code.
     let input = $(this).serialize().slice(5);
@@ -145,6 +145,12 @@ that matches our original html structure for a tweet
     }
 
     event.preventDefault();
+  });
+
+  // upButton functionality
+  $("#upButton").click(() => {
+    // Scrolls to position 0,0 in the window. Essentially the top left of the page.
+    window.scrollTo(0, 0);
   });
 
   loadTweets();
