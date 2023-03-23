@@ -14,3 +14,7 @@
   border: 10px solid #917017;
   
 }
+
+#scrollFunction {
+  display:none;
+}

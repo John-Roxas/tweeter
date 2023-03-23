@@ -15,7 +15,7 @@ The render tweets function will take our array of tweets stored in the data arra
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
-
+    $(".tweets-container").empty();
     tweets.forEach((element) => {
       let $newTweet = createTweetElement(element);
       $(".tweets-container").prepend($newTweet);
@@ -80,7 +80,6 @@ that matches our original html structure for a tweet
   const loadTweets = function (newTweet) {
     if (newTweet === true) {
       $.get("/tweets", function (data) {
-        $(".tweets-container").empty();
         renderTweets(data);
       });
     } else {
@@ -145,6 +144,19 @@ that matches our original html structure for a tweet
     }
 
     event.preventDefault();
+  });
+
+  /* This code adds a scroll event listener to the window object, which is triggered every time the user scrolls the page. 
+  The code then checks if the scrollY property of the window object is equal to 0. If it is, then the user is at the top of the page
+  and the code logs a message to the console. If it's not equal to 0, then the user is no longer at the top of the page and the code logs a different message to the console.
+  */
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY === 0) {
+      $("#scrollFunction").fadeOut();
+    } else {
+      $("#scrollFunction").fadeIn();
+    }
   });
 
   // upButton functionality
