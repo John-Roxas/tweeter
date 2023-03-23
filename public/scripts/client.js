@@ -114,6 +114,11 @@ that matches our original html structure for a tweet
     }
   };
 
+  // Write a new Tweet link functionality.
+  $(".headerRight").click(() => {
+    console.log("click!");
+    $("#toggleAnim").toggleClass("expand");
+  });
   // Form submission functionality.
 
   $("#target").submit(function (event) {

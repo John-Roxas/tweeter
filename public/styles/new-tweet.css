@@ -54,3 +54,27 @@ button {
   color: #917017;
 }
 
+
+
+.new-tweet {
+  overflow: hidden;
+  opacity:  0;
+  top:-250px;
+  line-height: 0;
+  position:absolute;
+  z-index: 0;
+  color: transparent;
+}
+
+.expand {
+  transform: translateY(250px);
+  animation: 3s ease 0s normal forwards 1 fadein;
+  opacity: 1;
+
+  overflow: hidden;
+  position: relative;
+}
+
+.headerRight:hover {
+  cursor:pointer;
+}
