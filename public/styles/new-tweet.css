@@ -58,23 +58,43 @@ button {
 
 .new-tweet {
   overflow: hidden;
-  opacity:  0;
-  top:-250px;
+
+  
   line-height: 0;
-  position:absolute;
-  z-index: 0;
   color: transparent;
+  display: none;
 }
 
+/*
 .expand {
-  transform: translateY(250px);
-  animation: 3s ease 0s normal forwards 1 fadein;
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  -ms-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
   opacity: 1;
-
   overflow: hidden;
-  position: relative;
+  max-height: fit-content;
+  
 }
 
+.expandOff {
+
+  -webkit-transition: all .8s ease;
+  -moz-transition: all .8s ease;
+  -ms-transition: all .8s ease;
+  -o-transition: all .8s ease;
+  transition: all .8s ease;
+
+  opacity: 0;
+  overflow: hidden;
+  max-height: 0;
+}
+*/
 .headerRight:hover {
   cursor:pointer;
+}
+
+#tweetbutton:hover {
+  cursor: pointer;
 }

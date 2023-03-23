@@ -116,8 +116,13 @@ that matches our original html structure for a tweet
 
   // Write a new Tweet link functionality.
   $(".headerRight").click(() => {
-    console.log("click!");
-    $("#toggleAnim").toggleClass("expand");
+    if (!$("#toggleAnim").is(":visible")) {
+      $("#toggleAnim").slideDown();
+    } else {
+      $("#toggleAnim").slideUp();
+    }
+
+    // $("#toggleAnim").toggleClass(["expand", "expandOff"]);
   });
   // Form submission functionality.
 
@@ -141,6 +146,7 @@ that matches our original html structure for a tweet
 
     event.preventDefault();
   });
+
   loadTweets();
   // renderTweets(data);
 });
