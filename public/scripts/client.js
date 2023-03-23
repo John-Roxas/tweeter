@@ -102,8 +102,15 @@ that matches our original html structure for a tweet
           `);
           $(".container").prepend($errorMsg);
         }
-
         break;
+      case "long": {
+        let $errorMsg = $(`
+            <div class="errorMsg">
+              <p> :( You're over the maximum character limit! Make it smaller</p>
+            </div>
+          `);
+        $(".container").prepend($errorMsg);
+      }
     }
   };
 
@@ -115,9 +122,9 @@ that matches our original html structure for a tweet
     if (!input) {
       htmlALERT("empty");
     } else if (input === "%20") {
-      alert("Write something in the textbox! Cannot tweet an empty message!");
+      htmlALERT("empty");
     } else if (input.length > 140) {
-      alert("Tweet is too long! Consider cutting down!");
+      htmlALERT("long");
     } else {
       jQuery.post("/tweets", $(this).serialize(), () => {
         loadTweets(true);
