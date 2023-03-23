@@ -90,13 +90,30 @@ that matches our original html structure for a tweet
     }
   };
 
+  // Create HTML alert function
+  const htmlALERT = function (type) {
+    switch (type) {
+      case "empty":
+        {
+          let $errorMsg = $(`
+            <div class="errorMsg">
+              <p> :( No empty tweets allowed! Try again!</p>
+            </div>
+          `);
+          $(".container").prepend($errorMsg);
+        }
+
+        break;
+    }
+  };
+
   // Form submission functionality.
 
   $("#target").submit(function (event) {
     // Writing a shortcut to the input form so we don't have a lot of unnecessary code.
     let input = $(this).serialize().slice(5);
     if (!input) {
-      alert("Write something in the textbox! Cannot tweet an empty message!");
+      htmlALERT("empty");
     } else if (input === "%20") {
       alert("Write something in the textbox! Cannot tweet an empty message!");
     } else if (input.length > 140) {
