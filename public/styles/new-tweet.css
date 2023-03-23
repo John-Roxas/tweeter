@@ -65,32 +65,7 @@ button {
   display: none;
 }
 
-/*
-.expand {
-  -webkit-transition: all .8s ease;
-  -moz-transition: all .8s ease;
-  -ms-transition: all .8s ease;
-  -o-transition: all .8s ease;
-  transition: all .8s ease;
-  opacity: 1;
-  overflow: hidden;
-  max-height: fit-content;
-  
-}
 
-.expandOff {
-
-  -webkit-transition: all .8s ease;
-  -moz-transition: all .8s ease;
-  -ms-transition: all .8s ease;
-  -o-transition: all .8s ease;
-  transition: all .8s ease;
-
-  opacity: 0;
-  overflow: hidden;
-  max-height: 0;
-}
-*/
 .headerRight:hover {
   cursor:pointer;
 }
