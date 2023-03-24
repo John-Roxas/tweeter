@@ -6,11 +6,10 @@
 
 // Data taken from compass page M4W9: Dynamic Tweets
 $(document).ready(function () {
-  /*
-  
-The render tweets function will take our array of tweets stored in the data array above and appends them to the 
-.tweets.container div in our html.
-*/
+  /* 
+  The render tweets function will take our array of tweets stored in the data array above and appends them to the 
+  .tweets.container div in our html.
+  */
   const renderTweets = function (tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -23,7 +22,7 @@ The render tweets function will take our array of tweets stored in the data arra
   };
 
   // Escape function to prevent malicious text inputs as tweets!
-  const escape = function (str) {
+  const escapeFunc = function (str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
@@ -36,8 +35,8 @@ that matches our original html structure for a tweet
     let currentTime = Date.now();
 
     /* timeBetween is calculated by determining the difference between the current time and the time stored in 
-  tweet.created_at. It then calculates this difference from unix time to days.
-  */
+    tweet.created_at. It then calculates this difference from unix time to days.
+    */
     let timeBetween = Math.floor(
       (currentTime - tweet.created_at) / 1000 / 60 / 60 / 24
     );
@@ -60,7 +59,7 @@ that matches our original html structure for a tweet
               </div>
             </header>
             <div class="tweets-body">
-              <p class="tweet-p">${escape(tweet.content.text)}</p>
+              <p class="tweet-p">${escapeFunc(tweet.content.text)}</p>
             </div>
             <footer class="tweets-article-footer">
               <div class="tweets-article-footerleft">
@@ -77,16 +76,10 @@ that matches our original html structure for a tweet
   };
 
   // jQuery function to make a request to /tweets and receive the arry of tweets as JSON.
-  const loadTweets = function (newTweet) {
-    if (newTweet === true) {
-      $.get("/tweets", function (data) {
-        renderTweets(data);
-      });
-    } else {
-      $.get("/tweets", function (data) {
-        renderTweets(data);
-      });
-    }
+  const loadTweets = function () {
+    $.get("/tweets", function (data) {
+      renderTweets(data);
+    });
   };
 
   // Create HTML alert function
@@ -120,8 +113,6 @@ that matches our original html structure for a tweet
     } else {
       $("#toggleAnim").slideUp();
     }
-
-    // $("#toggleAnim").toggleClass(["expand", "expandOff"]);
   });
 
   // Form submission functionality.
@@ -142,7 +133,6 @@ that matches our original html structure for a tweet
         $(".errorMsg").remove();
       });
     }
-
     event.preventDefault();
   });
 
