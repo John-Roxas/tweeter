@@ -11,3 +11,24 @@
   z-index: 1;
 }
 
+/* Laptops / Desktops: minimum width of 960px */
+@media only screen and (min-width: 960px) {
+  /* Write CSS rules that target small laptop screen sizes and beyond */
+  .mainHeader {
+    width: 25%;
+    top:50%;
+    left:25%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    height: 500px;
+    width: 500px;
+  }
+
+  .headerContainer {
+    height:100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 50%;
+    
+  }
+}

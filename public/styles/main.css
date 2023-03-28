@@ -4,3 +4,17 @@ main {
   height:100%;
   background-color: #3DFFEE;
 }
+
+/* Laptops / Desktops: minimum width of 960px */
+@media only screen and (min-width: 960px) {
+  main {
+    display:flex;
+    flex-direction: row;   
+    top: 80px;
+    align-items: start;
+    position: relative;
+    padding-top: 4em;
+    
+  }
+  /* Write CSS rules that target small laptop screen sizes and beyond */
+}
