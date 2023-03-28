@@ -20,8 +20,8 @@
     left:25%;
     transform: translate(-50%, -50%);
     position: fixed;
-    height: 500px;
-    width: 500px;
+    height: 50%;
+    width: 25%;
   }
 
   .headerContainer {
@@ -30,5 +30,34 @@
     margin-right: 5%;
     width: 50%;
     
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  /* Write CSS rules that target small laptop screen sizes and beyond */
+  .mainHeader {
+    width: 25%;
+    top:50%;
+    left:25%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    height: 25%;
+    width: 25%;
+    font: 400;
+  }
+
+  .headerContainer {
+    height:100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 50%;
+    
+  }
+  .headerImg {
+    height: 75%;
+    width: 75%;
+  }
+  .headerName {
+    font-size: 2rem;
   }
 }
