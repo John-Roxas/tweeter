@@ -37,9 +37,7 @@ that matches our original html structure for a tweet
     /* timeBetween is calculated by determining the difference between the current time and the time stored in 
     tweet.created_at. It then calculates this difference from unix time to days.
     */
-    let timeBetween = Math.floor(
-      (currentTime - tweet.created_at) / 1000 / 60 / 60 / 24
-    );
+    let timeBetween = Math.floor();
 
     let $tweet = $(`
       <article class="tweets">
@@ -63,7 +61,9 @@ that matches our original html structure for a tweet
             </div>
             <footer class="tweets-article-footer">
               <div class="tweets-article-footerleft">
-                <p class="tweets-article-footerleft-timesince">${timeBetween} Days Ago</h5>
+                <p class="tweets-article-footerleft-timesince">${timeago.format(
+                  tweet.created_at
+                )}</h5>
               </div>
               <div class="tweets-article-footerright">
                 <i class="fa-solid fa-flag tweets-icon-color"></i>
