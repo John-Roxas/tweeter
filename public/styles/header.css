@@ -20,8 +20,8 @@
     left:25%;
     transform: translate(-50%, -50%);
     position: fixed;
-    height: 50%;
-    width: 25%;
+    height: 25vw;
+    width: 25vw;
   }
 
   .headerContainer {
@@ -29,7 +29,11 @@
     margin-left: 5%;
     margin-right: 5%;
     width: 50%;
-    
+  
+  }
+  .headerImg {
+    height: 15vw;
+    width: 15vw;
   }
 }
 
@@ -54,8 +58,8 @@
     
   }
   .headerImg {
-    height: 75%;
-    width: 75%;
+    height: 15vw;
+    width: 15vw;
   }
   .headerName {
     font-size: 2rem;
