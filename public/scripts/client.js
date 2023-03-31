@@ -32,13 +32,6 @@ $(document).ready(function () {
 that matches our original html structure for a tweet
 */
   const createTweetElement = function (tweet) {
-    let currentTime = Date.now();
-
-    /* timeBetween is calculated by determining the difference between the current time and the time stored in 
-    tweet.created_at. It then calculates this difference from unix time to days.
-    */
-    let timeBetween = Math.floor();
-
     let $tweet = $(`
       <article class="tweets">
         <header class="tweets-article-header">
