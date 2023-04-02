@@ -12,6 +12,12 @@ This repository is the starter code for the project: Students will fork and clon
 3. Start the web server using the `npm run local` command. The app will be served at <http://localhost:8080/>.
 4. Go to <http://localhost:8080/> in your browser.
 
+## Features
+- Scroll to top button appears in bottom right corner when the user scrolls any distance down. Disappears again when at the top of the page.
+- Tweets publish in chronological order (newest at top)
+- Tweets will have a drop shadow when mouse over
+- New tweet text menu will appear when the write a new tweet text at the top right is selected. Tweet menu disappears when it is clicked again.
+
 ## Dependencies
 
 - Express
